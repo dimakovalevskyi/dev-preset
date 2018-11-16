@@ -57,8 +57,7 @@ function serve() {
 
 exports.styles = styles;
 exports.scripts = scripts;
-exports.serve = serve;
-
+exports.serve = series(styles, scripts, serve);
 exports.default = parallel(styles, scripts);
 exports.build = parallel(
     series(styles, minifyStyles), 

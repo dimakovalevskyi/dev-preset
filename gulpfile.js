@@ -52,6 +52,7 @@ function serve() {
     });
     watch(['src/js/*.js'], series(scripts, reload));
     watch(['src/scss/*.scss'], series(styles, reload));
+    watch(['dist/index.html'], series(reload));
 }
 
 exports.styles = styles;
